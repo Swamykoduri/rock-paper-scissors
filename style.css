@@ -1,0 +1,262 @@
+@font-face {
+    font-family: 'INFECTED.woff';
+    font-style: normal;
+    font-weight: normal;
+    src: local('INFECTED'), url('./assets/fonts/INFECTED.woff') format('woff');
+}
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+section {
+  font-family: Roboto, arial;
+  height: 100vh;
+  background: url('./assets/gaming\ background\ img.jpg');
+  background-size: cover;
+  overflow: hidden;
+  display: absolute;
+}
+
+.score-card {
+  color: rgb(237, 237, 237);
+  height: 15vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.score-card h2 {
+  font-size: 20px;
+}
+
+.score-card span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  font-size: 20px;
+}
+
+.player-score {
+  color: rgb(241, 80, 11);
+}
+
+.computer-score {
+  color: rgb(23, 78, 243);
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 50vh;
+  transition: opacity 0.5s ease;
+}
+
+.intro h2 {
+  font-family: 'INFECTED.woff';
+  font-size: 80px;
+  color: rgb(238, 63, 9);
+}
+
+.intro button {
+  background-color: rgba(20, 138, 255, 0.563);
+  color: rgb(237, 237, 237);
+  border: none ;
+  padding: 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+.intro button:hover {
+  background-color: rgb(11, 34, 57);
+   transition: 0.5s;
+}
+
+.intro button:active {
+  opacity: 0.4;
+}
+
+/* main {
+  position: absolute;
+  top: 180px;
+  left: 500px;
+} */
+
+.match {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.8s ease 0.8s;
+}
+
+.winner {
+  text-align: center;
+  color: #adb4bf;
+  font-size: 35px;
+}
+
+.hand-signs, .options{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 70px;
+  transition: opacity 0.8s ease 0.8s;
+}
+
+.options button{
+  height: 100px;
+  width: 100px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 0;
+  box-shadow: 0 0 15px 7px rgb(0, 0, 0, 0.1);
+  
+}
+
+.options button:active {
+  box-shadow: 0 3px 4px 0 #DBEDF3;
+  opacity: 0.5;
+}
+
+div.pressed {
+  box-shadow: 0 3px 4px 0 #DBEDF3;
+  opacity: 0.5;
+}
+
+.rock {
+  background: url("./assets/rock\ button.png") no-repeat;
+  background-size: 100%;
+}
+
+.paper {
+  background: url("./assets/paper\ button.png") no-repeat;
+  background-size: 100%;
+ 
+}
+
+.scissors {
+  background: url("./assets/scissors\ button.png") no-repeat;
+  background-size: 100%;
+}
+
+.player-hand {
+  transform: rotateY(180deg);
+}
+
+div.fadeOut {
+  opacity: 0;
+  pointer-events: none;
+}
+
+div.fadeIn {
+  opacity: 1;
+  pointer-events: all;
+}
+
+@keyframes shakePlayer {
+  0% {
+    transform: rotateY(180deg) translateY(0px);
+  }
+  15% {
+    transform: rotateY(180deg) translateY(-50px);
+  }
+  25% {
+    transform: rotateY(180deg) translateY(0px);
+  }
+  35% {
+    transform: rotateY(180deg) translateY(-50px);
+  }
+  50% {
+    transform: rotateY(180deg) translateY(0px);
+  }
+  65% {
+    transform: rotateY(180deg) translateY(-50px);
+  }
+  75% {
+    transform: rotateY(180deg) translateY(0px);
+  }
+  85% {
+    transform: rotateY(180deg) translateY(-50px);
+  }
+  100% {
+    transform: rotateY(180deg) translateY(0px);
+  }
+}
+
+@keyframes shakeComputer {
+  0% {
+    transform: translateY(0px);
+  }
+  15% {
+    transform: translateY(-50px);
+  }
+  25% {
+    transform: translateY(0px);
+  }
+  35% {
+    transform: translateY(-50px);
+  }
+  50% {
+    transform: translateY(0px);
+  }
+  65% {
+    transform: translateY(-50px);
+  }
+  75% {
+    transform: translateY(0px);
+  }
+  85% {
+    transform: translateY(-50px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/********************* Copy Rights  ***********************/
+
+footer {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+}
+
+.copyright {
+  width: 100%;
+  position: relative;
+  bottom: 5px;
+  color: #c9c0c0;
+}
+
+/************************* Media Query********************/
+
+@media (width < 425px){
+  .intro h2 {
+    font-size: 30px;
+  }
+  body{
+    overflow: hidden;
+  }
+
+  .intro button {
+    font-size: 10px;
+  }
+  footer{
+    font-size: 10px;
+  }
+  .score-card h2,.score-card span {
+    font-size: 15px;
+  }
+}
